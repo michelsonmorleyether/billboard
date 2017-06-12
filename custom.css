@@ -25,6 +25,10 @@
                 font-size: 0.5em;
                 color: #888
         }
+        .helper_info{
+                font-size: 0.5em;
+                color: #888
+        }
         .wrapper{
             position: absolute;
         }
@@ -33,7 +37,9 @@
             top: 0;
             left: 0;
         }
-
+        canvas{
+            cursor:crosshair
+        }
         #infozone{
             width: 100%;
         }

@@ -1,11 +1,10 @@
 <!Doctype html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="./favicon.ico">
-    <title>Ether Billborad</title>
+    <title>The Ether Billborad</title>
     <style>
         #billboard {
             background-image: url("billboard.png");
@@ -16,7 +15,8 @@
         }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-orange.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <!--<link href="skeleton.css" rel="stylesheet" type="text/css" />-->
     <link href="custom.css" rel="stylesheet" type="text/css" />
 </head>
@@ -44,26 +44,22 @@
                             <span class="mdl-textfield__error">Input is not a valid integer!</span>
                         </div>
                     </form>
-                    <div class="row">
-                        <label for="buy_price">Price</label>
-                        <div type="text" id='buy_price'></div> ETH
-                    </div>
-                    <div class="row">
-                        <label for="on_sale">On sale</label>
-                        <div type="text" id='on_sale'></div>
-                    </div>
-                    <h4>Buy </h4>
+                    <h3 class="row">
+                        <span  id='buy_price'></span> <span class="helper_info">ETH</span>
+                    </h3>
+                    <h4  > <span class="helper_info">On sale</span><span id='on_sale'></span></h4>
+                    <h4  > <span class="helper_info">Owner:</span><br><span id='owner'></span></h4>
                     <form>
-                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised" id="buyButton">Buy</button>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="buyButton">Buy</button>
                     </form>
                     <h4>Edit </h4>
                     <form>
                         <div class="row">
-                            <div class="mdl-textfield mdl-js-textfield">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                 <input class="mdl-textfield__input" type="text" id="title_input">
                                 <label class="mdl-textfield__label" for="title_input">Title</label>
                             </div>
-                            <div class="mdl-textfield mdl-js-textfield">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                 <input class="mdl-textfield__input" type="text" id="url_input">
                                 <label class="mdl-textfield__label" for="url_input">Goo.gl url address</label>
                             </div>
@@ -80,7 +76,7 @@
                     </form>
                     <h4>Sell </h4>
                     <form>
-                        <div class="mdl-textfield mdl-js-textfield">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <label class="mdl-textfield__label" for="sell_price">Sell Price</label>
                             <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sell_price"> ETH
                             <span class="mdl-textfield__error">Input is not a valid number!</span>
@@ -89,7 +85,7 @@
                     </form>
                     <h4>Withdraw </h4>
                     <form>
-                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised" id="withdrawButton">Withdraw</button>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="withdrawButton">Withdraw</button>
                     </form>
                 </div>
             </div>
@@ -113,45 +109,72 @@
                     <p>
                         The billboard that you own, Once you buy a billboard space to advertise your site, webpage or whatever you want to show on
                         it , you own that piece of the boards, that means that you can update it at any time or if you get
-                        tire of it you can even sell it.
-                        <br> The billboard is backed on the Ethereum blockchain so you will need some Ether in order to play
-                        with it. There is a contract in the blockchain which defines who owns each slice.
+                        tired of it you can even sell it.
+                        <br>
+                        Think about it as a billboard in the internet where you can advertise your site , but at the same time you own part of it. So the billboard becomes
+                        a real estate market where you own fields or chunks in the billboard and you can build what you want there or sell them at any at the price you consider. All this behaviour is backed by a contract defined in the Ethereum blockchain.
+                    </p>
+                    <p>
+                        The billboard is divided in chunks of 10 by 10 pixels i.e. 100 pixels, each pixel starts at only 0.001 ether, so a chunk cost
+                        0.1 ether Once you buy the chunk you own it, so you can set the content and associated url and title
+                        that you want using the controls below. But as this is backed by the Ethereum network you own it
+                        so you can sell it at the price you choose and at any given time through the sell interface. If you
+                        are connected to the network through MetaMask you will also see the "live" update of the board. The board has been deployed at the following adress:
+                        0x458ca346153ef1A36B6bBf89DE01F4B551555006 .
                     </p>
                 </div>
             </div>
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--8-col">
-                    <h1> Description</h1>
+                    <h1> Advertisement forever</h1>
                     <p>
-                        The billboard is divided in chunks of 10 by 10 pixels i.e. 100 pixels, each pixel starts at only 0.005 ether so a chunk cost
-                        0.5 ether Once you buy the chunk you own it, so you can set the content and associated url and title
-                        that you want using the controls below. But as this is backed by the Ethereum network you own it
-                        so you can sell it at the price you choose and at any given time through the sell interface. If you
-                        are connected to the network through MetaMask you will also see the "live" update of the board
+                        The billboard will show your desired pixels, the title or description you choose and will lead to the webpage of your choice. But thanks to the Ethereum blockchain capabilities you can edit it at any, so if you change your logo 
+                        you can change it in the board too, also if you change your brand name or your webpage url<br> 
+                        The billboard is backed in the blockchain and will remain there forever that means that you or anyone can retrieve it at any time.
                     </p>
                 </div>
                 <div class="mdl-cell mdl-cell--4-col"><img src="billboard.jpg" alt="billboard panel"></div>
             </div>
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--4-col">
-                    <img src="edit.jpg" alt="edition panel">
+                    <img src="handshake.jpg" alt="edition panel">
                 </div>
                 <div class="mdl-cell mdl-cell--8-col">
-                    <h1> Customize</h1>
+                    <h1> Buy and sell</h1>
                     <p>
-                        Once you own a piece of the board it is up to you to set wath's on it, from the picture, to the title and the url. You can
+                        Once you own a piece of the board it is up to you to set what's on it: the picture, to the title and the url. You can
                         think of it as owning a terrain where you can build your house as you wish. Of course you are the
-                        owner so you can sell it at any moment and at any price you want.In order to use the google input
-                        shortener, go to https://goo.gl/ and put your webpage url, then just get the last part of the given
-                        url. e.g. for goo.gl/f0gvBT just set f0gvBT. Once you sell your chunk you can withdraw the Ether.
+                        owner so you can sell it at any moment and at any price you want.
+                        As in a real estate market you can buy chunks of the billboard , and sell them later at they price you choose. So for example you can buy a chunk at the initial price of 0.1 Ether and sell it later a 0.2 Ether, Once someone buy it, you just click the withdraw button and the money will be send to your account.
+
                     </p>
                 </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--8-col">
+                    <h1> Customizable</h1>
+                    <p>
+                        Once you own a piece of the board it is up to you to set what's on it: the picture, to the title and the url. You can
+                        think of it as owning a terrain where you can build your house as you wish. Of course you are the
+                        owner so you can sell it at any moment and at any price you want.
+                        The urls are based on the google url shortener . In order to use the google input
+                        shortener, go to https://goo.gl/ and put your webpage url, then just get the last part of the given
+                        url. e.g. for goo.gl/f0gvBT just set f0gvBT. 
+                        If you decide to sell your chunk you just need to set a price. Once you sell your chunk you can withdraw the Ether earned.
+                    </p>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <img src="edit.jpg" alt="edition panel">
+                </div>
+
             </div>
         </div>
         <!-- THE working area to interact withg the panel -->
         <div class="mdl-tabs__panel" id="interact-panel">
             <div id="workarea" class="mdl-grid">
                 <div id="withWeb3" >
+                To interact with the bill board activate the edit mode.
+                <br>
                 <div class="mdl-cell mdl-cell--6-col">
                     <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch_sale">
                     <input type="checkbox" id="switch_sale" class="mdl-switch__input">
@@ -167,12 +190,24 @@
                         </ul>
                     </p>
                 </div>
+                
             </div>
+            <img src="edit.gif" alt="edition example">
         </div>
     </div>
     </dialog>
     <script src="bundle.js"></script>
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100839813-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </body>
 
 </html>
