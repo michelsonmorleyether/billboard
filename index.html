@@ -195,7 +195,18 @@
             <img src="edit.gif" alt="edition example">
         </div>
     </div>
-    </dialog>
+  <dialog class="mdl-dialog">
+    <h4 id="modal_title" class="mdl-dialog__title"></h4>
+    <div class="mdl-dialog__content">
+      <p id = "modal_content">
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" id ="cancel_button" class="mdl-button mdl-button--accent">Cancel</button>
+      <button type="button" id ="agree_button" class="mdl-button mdl-button--colored">Continue</button>
+    </div>
+  </dialog>
+    <script src="dialog-polyfill.js"></script>
     <script src="bundle.js"></script>
 
     <script>
