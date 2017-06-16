@@ -15,6 +15,11 @@
             border: 2px solid black
         }
 
+        #Header h1 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
         #boardCanvas,#selectionCanvas,#salesCanvas {
             margin-left: 11px;
             margin-top: 11px;

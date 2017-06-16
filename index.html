@@ -1,5 +1,6 @@
 <!Doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,9 +15,10 @@
             max-width: 100%;
         }
     </style>
+    <script src="dialog-polyfill.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-orange.min.css">
-        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <!--<link href="skeleton.css" rel="stylesheet" type="text/css" />-->
     <link href="custom.css" rel="stylesheet" type="text/css" />
 </head>
@@ -45,10 +47,10 @@
                         </div>
                     </form>
                     <h3 class="row">
-                        <span  id='buy_price'></span> <span class="helper_info">ETH</span>
+                        <span id='buy_price'></span> <span class="helper_info">ETH</span>
                     </h3>
-                    <h4  > <span class="helper_info">On sale</span><span id='on_sale'></span></h4>
-                    <h4  > <span class="helper_info">Owner:</span><br><span id='owner'></span></h4>
+                    <h4> <span class="helper_info">On sale</span><span id='on_sale'></span></h4>
+                    <h4> <span class="helper_info">Owner:</span><br><span id='owner'></span></h4>
                     <form>
                         <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="buyButton">Buy</button>
                     </form>
@@ -78,7 +80,7 @@
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <label class="mdl-textfield__label" for="sell_price">Sell Price</label>
-                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sell_price"> ETH
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sell_price">                            ETH
                             <span class="mdl-textfield__error">Input is not a valid number!</span>
                         </div>
                         <button type="button" class="mdl-button mdl-js-button mdl-button--raised" id="sellButton">Sell</button>
@@ -96,6 +98,11 @@
         <div id="board_interact" class="flextab"> <i class="material-icons">&#xE8B8;</i> Interact </div>
 
     </div>-->
+    <div class="mdl-cell mdl-cell--6-col">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch_sale">
+                    <input type="checkbox" id="switch_sale" class="mdl-switch__input">
+                    <span class="mdl-switch__label"><i class="material-icons">&#xE8B8;</i>Edit mode</span>
+                </div>
     <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
         <div class="mdl-tabs__tab-bar">
             <a href="#info-panel" class="mdl-tabs__tab is-active">Info</a>
@@ -125,8 +132,23 @@
                 </div>
             </div>
             <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col">
+                    <img src="real_billboard.jpg" alt="billboard in real life">
+                </div>
                 <div class="mdl-cell mdl-cell--8-col">
-                    <h1> Advertisement forever</h1>
+                    <h2> Tangible</h2>
+                    <p>
+                        We want to show ethereum to the real world in a tangible way. 
+                        So the content of the billboard will be place in an actual billboard to be displayed for one year in a real place. 
+                        But first we need to fill it, the deadline is June 30, 2017 so hurry up and buy you chunk. 
+                        Once is filled you will have some time to edit your content or even resell your chunk before it is printed out. 
+                        Of course no illegal stuff will be displayed in the actual billboard.
+                    </p>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--8-col">
+                    <h2> Advertisement forever</h2>
                     <p>
                         The billboard will show your desired pixels, the title or description you choose and will lead to the webpage of your choice. But thanks to the Ethereum blockchain capabilities you can edit it at any, so if you change your logo 
                         you can change it in the board too, also if you change your brand name or your webpage url<br> 
@@ -140,7 +162,7 @@
                     <img src="handshake.jpg" alt="edition panel">
                 </div>
                 <div class="mdl-cell mdl-cell--8-col">
-                    <h1> Buy and sell</h1>
+                    <h2> Buy and sell</h2>
                     <p>
                         Once you own a piece of the board it is up to you to set what's on it: the picture, to the title and the url. You can
                         think of it as owning a terrain where you can build your house as you wish. Of course you are the
@@ -152,7 +174,7 @@
             </div>
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--8-col">
-                    <h1> Customizable</h1>
+                    <h2> Customizable</h2>
                     <p>
                         Once you own a piece of the board it is up to you to set what's on it: the picture, to the title and the url. You can
                         think of it as owning a terrain where you can build your house as you wish. Of course you are the
@@ -172,43 +194,40 @@
         <!-- THE working area to interact withg the panel -->
         <div class="mdl-tabs__panel" id="interact-panel">
             <div id="workarea" class="mdl-grid">
-                <div id="withWeb3" >
                 To interact with the bill board activate the edit mode.
                 <br>
-                <div class="mdl-cell mdl-cell--6-col">
-                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch_sale">
-                    <input type="checkbox" id="switch_sale" class="mdl-switch__input">
-                    <span class="mdl-switch__label">Edit mode</span>
-                </div>
-                </div>
-                <div id="noWeb3" >
-                    <p>
-                        This is an Ethereum backed billboard in order to interact with it you need to have an Ethereum interface, the suggested one
-                        is to use Mist or MetaMask. yout can see how to set it up in the following links:
-                        <ul>
-                            <li><a href="https://www.cryptocompare.com/wallets/guides/how-to-use-metamask/"> How to use MetaMask</a></li>
-                        </ul>
-                    </p>
-                </div>
-                
             </div>
             <img src="edit.gif" alt="edition example">
         </div>
     </div>
-  <dialog class="mdl-dialog">
+<dialog class="mdl-dialog">
     <h4 id="modal_title" class="mdl-dialog__title"></h4>
-    <div class="mdl-dialog__content">
-      <p id = "modal_content">
-      </p>
+    <div id="noWeb3">
+        <div class="mdl-dialog__content">
+            <p>
+                This is an Ethereum backed billboard in order to interact with it you need to have an Ethereum interface, the suggested one
+                is to use Mist or MetaMask. yout can see how to set it up in the following links:
+                <ul>
+                    <li><a href="https://www.cryptocompare.com/wallets/guides/how-to-use-metamask/"> How to use MetaMask</a></li>
+                </ul>
+            </p>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" id="agree_button" class="mdl-button mdl-button--colored">Continue</button>
+        </div>
     </div>
-    <div class="mdl-dialog__actions">
-      <button type="button" id ="cancel_button" class="mdl-button mdl-button--accent">Cancel</button>
-      <button type="button" id ="agree_button" class="mdl-button mdl-button--colored">Continue</button>
+    <div id="withWeb3">
+        <div class="mdl-dialog__content">
+            <p id="modal_content">
+            </p>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" id="cancel_button" class="mdl-button mdl-button--accent">Cancel</button>
+            <button type="button" id="agree_button" class="mdl-button mdl-button--colored">Continue</button>
+        </div>
     </div>
-  </dialog>
-    <script src="dialog-polyfill.js"></script>
+</dialog>
     <script src="bundle.js"></script>
-
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
