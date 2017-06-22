@@ -115,33 +115,18 @@
                 <div class="mdl-cell mdl-cell--12-col">
                     <h1>The Ethereum Billboard</h1>
                     <p>
-                        The billboard to bring Ethereum to the streets. But as this billboard is Ethereum backed so you can own and control it, once you buy a billboard chunk to advertise your site, personal webpage or whatever you want to show on
+                        This billboard is Ethereum backed so you can own and control it, once you buy a billboard chunk to advertise your site, personal webpage or whatever you want to show on
                         it, you own that piece of the boards, that means that you can update it at any time or if want you can even sell it.
                         <br>
                         Think about it as a billboard in the internet where you can advertise your site , but at the same time you own part of it. So the billboard becomes
                         a real estate market where you own fields or chunks in the billboard and you can build what you want there or sell them at any at the price you consider. All this behaviour is backed by a contract defined in the Ethereum blockchain.
                     </p>
                     <p>
-                        The billboard is divided in chunks of 10 by 10 pixels i.e. 100 pixels, each pixel starts at only 0.0005 ETH, so a chunk cost
-                        0.05 ETH Once you buy the chunk you own it, so you can set the content and associated url and title
+                        The billboard is divided in chunks of 10 by 10 pixels i.e. 100 pixels, a chunk cost a symbolic 
+                        0.001 ETH i.e. a few cents.Once you buy the chunk you own it, so you can set the content and associated url and title
                         that you want using the controls below. But as this is backed by the Ethereum network you own it
                         so you can sell it at the price you choose and at any given time through the sell interface. If you
                         are connected to the network through MetaMask you will also see the "live" update of the board.
-                    </p>
-                </div>
-            </div>
-            <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--4-col">
-                    <img src="real_billboard.jpg" alt="billboard in real life">
-                </div>
-                <div class="mdl-cell mdl-cell--8-col">
-                    <h2> Tangible</h2>
-                    <p>
-                        We want to show ethereum to the real world in a tangible way. 
-                        So the content of the billboard will be place in an actual billboard to be displayed for one year in a real place. 
-                        But first we need to fill it, the deadline to fill it and go ahead with the final billboard is 23:59 June 30, 2017 UTC so hurry up and buy you chunk. 
-                        Once is filled you will have some time to edit your content or even resell your chunk before it is printed out. 
-                        Of course no illegal stuff will be displayed in the actual billboard. so refrain to do that.
                     </p>
                 </div>
             </div>
@@ -188,8 +173,8 @@
         </div>
         <!-- THE working area to interact withg the panel -->
         <div class="mdl-tabs__panel" id="interact-panel">
-            <div class="mdl-cell mdl-cell--12-col">
-                <div id="workarea" class="mdl-grid">
+            <div id="workarea" class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
                     <p>
                     To interact with the bill board activate the edit mode. You need to be on the main network and have a metamask account activated.
                     <br>
@@ -205,9 +190,33 @@
                     </p>
                 </div>
             </div>
-           <div class="mdl-cell mdl-cell--12-col">
-                <div id="workarea" class="mdl-grid">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
                     <img src="edit.gif" alt="edition example">
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <h2>Buy</h2>
+                    <p>
+                    To Buy a chunk , just select the edit mode, then select a chunk with the cursor directly on the board, in the right panel the price and availability will be displayed.
+                    Red marked chunk are already sold, and are not for sale.
+                    Once you have your desired chunk just click on the buy button and follow the metamask intructions.
+                    </p>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <h2>Edit</h2>
+                    <p>
+                    To Edit a chunk , just select the edit mode, then select the chunk you want to edit, just be sure that you own that chunk otherwise you will be expending a lot of unnecessary gas.
+                    You can edit the following fields
+                    </p>
+                    <ul>    
+                        <li>Url: from goo.gl , just taake the last past after the slash</li>
+                        <li>Title : test to be displayed when hovering the chunk</li>
+                        <li>Content : Draw what you want to appear on the board, just slect a color and fill the pixels</li>
+                    </ul>
                 </div>
             </div>
         </div>
